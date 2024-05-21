@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .shopping-list, .summary {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .shopping-list {
+            width: 300px;
+        }
+        .summary {
+            width: 200px;
+        }
+        .shopping-list input[type="text"] {
+            width: calc(100% - 60px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .shopping-list button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .item .name {
+            flex-grow: 1;
+            text-align: left;
+        }
+        .item .count {
+            display: flex;
+            align-items: center;
+        }
+        .item .count div {
+            width: 30px;
+            text-align: center;
+        }
+        .item .count .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .item .count .btn-minus {
+            background-color: #ff5e5e;
+            color: #fff;
+        }
+        .item .count .btn-plus {
+            background-color: #5eff5e;
+            color: #fff;
+        }
+        .item .status {
+            display: flex;
+            gap: 5px;
+        }
+        .item .status button {
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .item .status .btn-bought {
+            background-color: #ddd;
+            color: #000;
+        }
+        .item .status .btn-remove {
+            background-color: #ff5e5e;
+            color: #fff;
+        }
+        .summary h3 {
+            margin-top: 0;
+        }
+        .summary .status-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="shopping-list">
+        <div class="add-item">
+            <input type="text" placeholder="Назва товару">
+            <button>Додати</button>
+        </div>
+        <div class="item">
+            <div class="name"><del>Помідори</del></div>
+            <div class="count">
+                <button class="btn btn-minus">-</button>
+                <div>2</div>
+                <button class="btn btn-plus">+</button>
+            </div>
+            <div class="status">
+                <button class="btn-bought">Не куплено</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="name">Печиво</div>
+            <div class="count">
+                <button class="btn btn-minus">-</button>
+                <div>2</div>
+                <button class="btn btn-plus">+</button>
+            </div>
+            <div class="status">
+                <button class="btn-bought">Куплено</button>
+                <button class="btn-remove">×</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="name">Сир</div>
+            <div class="count">
+                <button class="btn btn-minus">-</button>
+                <div>1</div>
+                <button class="btn btn-plus">+</button>
+            </div>
+            <div class="status">
+                <button class="btn-bought">Куплено</button>
+                <button class="btn-remove">×</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h3>Залишилося</h3>
+        <div class="status-list">
+            <div class="status-item">
+                <span>Печиво</span>
+                <span>2</span>
+            </div>
+            <div class="status-item">
+                <span>Сир</span>
+                <span>1</span>
+            </div>
+        </div>
+        <h3>Куплено</h3>
+        <div class="status-list">
+            <div class="status-item">
+                <span><del>Помідори</del></span>
+                <span>2</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
